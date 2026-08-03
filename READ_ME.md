@@ -52,7 +52,7 @@ Index Tracking 의 철학과 맞지 않을까?
 support space 를 실수 전구간으로 잡으면 일부 최적화 변수에 대해 closed form 의 형태로 해를 얻어서 계산시간을 획기적으로 단축시킬 수 있는 것으로 보인다.
 
 그래서 test 2 는 support space 가 해를 구하는데 얼마나 영향을 미치는지를 확인한다.
-support space 를 rough 하게 잡았을 때, detail 하게 잡았을 때, 그리고 support space 가 실수 전구간일 때 세 경우를 서로 비교한다.
+support space 를 rough 하게 잡았을 때, detail 하게 잡았을 때, 그리고 support space 가 실수 전구간일 때 세 경우를 각각 case 1, 2, 3으로 하여 서로 비교한다.
 
 각각의 경우에 대해 CEIR, CLERI, Robust Index Tracking 세 가지로 비교한다.
 
@@ -67,3 +67,7 @@ support space 가 작다는 것은 결국 constraint 가 더 느슨해졌다고 
 
 case 2 의 경우, margin 을 어느 정도 확보하여 최소한의 support space 를 확보하면 어느 정도 안정화가 되는 모습을 보였다. 
 이 경우, case 1 과 case 3 의 결과와 유사한 결과를 얻었다.
+
+# Experience 3
+
+Support space 를 $\mathbb R^m$으로 둘 경우, 최적화 변수를 하나로 줄일 수 있다. 따라서 이 실험에서는 최적화 변수를 줄이기 이전 알고리즘에서 단순히 support function을 수정한 경우와, 수학적인 유도 과정을 통해 최적화 변수를 하나로 줄인 알고리즘(v2)이 서로 동일한 결과를 주는지 확인한다.
