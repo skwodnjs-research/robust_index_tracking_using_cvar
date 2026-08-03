@@ -1,5 +1,6 @@
 import os
 from io import StringIO
+from pathlib import Path
 
 import numpy as np
 import pandas as pd
@@ -12,10 +13,12 @@ import yfinance as yf
 
 PERIOD = "20y"
 
-STOCK_RETURN_FILE = "data/data_sp500_stocks.csv"
-INDEX_RETURN_FILE = "data/data_sp500_index.csv"
+BASE_DIR = Path(__file__).resolve().parent
+DATA_DIR = BASE_DIR / "data"
+DATA_DIR.mkdir(exist_ok=True)
 
-os.makedirs("data", exist_ok=True)
+STOCK_RETURN_FILE = DATA_DIR / "data_sp500_stocks.csv"
+INDEX_RETURN_FILE = DATA_DIR / "data_sp500_index.csv"
 
 # ============================================================
 # Download S&P 500 constituents

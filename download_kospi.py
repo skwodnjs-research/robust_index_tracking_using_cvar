@@ -1,10 +1,10 @@
 import os
-from io import StringIO
+from pathlib import Path
 
 import numpy as np
 import pandas as pd
-import requests
 import yfinance as yf
+import FinanceDataReader as fdr
 
 # ============================================================
 # Configuration
@@ -12,30 +12,26 @@ import yfinance as yf
 
 PERIOD = "20y"
 
-STOCK_RETURN_FILE = "data/data_sp500_stocks.csv"
-INDEX_RETURN_FILE = "data/data_sp500_index.csv"
+BASE_DIR = Path(__file__).resolve().parent
+DATA_DIR = BASE_DIR / "data"
+DATA_DIR.mkdir(exist_ok=True)
+
+STOCK_RETURN_FILE = DATA_DIR / "data_kospi_stocks.csv"
+INDEX_RETURN_FILE = DATA_DIR / "data_kospi_index.csv"
 
 os.makedirs("data", exist_ok=True)
 
 # ============================================================
-# Download S&P 500 constituents
+# Download KOSPI constituents
 # ============================================================
 
-print("Downloading S&P 500 constituents...")
+print("Downloading KOSPI constituents...")
 
-url = "https://en.wikipedia.org/wiki/List_of_S%26P_500_companies"
-response = requests.get(url, headers={"User-Agent": "Mozilla/5.0"}, timeout=30)
-response.raise_for_status()
+listing = fdr.StockListing("KOSPI")
 
-table = pd.read_html(StringIO(response.text))[0]
-
-tickers = (
-    table["Symbol"]
-    .dropna()
-    .str.upper()
-    .str.replace(".", "-", regex=False)
-    .tolist()
-)
+# Convert 6-digit stock codes to Yahoo Finance tickers
+tickers = listing["Code"].astype(str).str.zfill(6) + ".KS"
+tickers = tickers.tolist()
 
 print(f"Found {len(tickers)} stocks.")
 
@@ -51,7 +47,7 @@ stock_data = yf.download(
     interval="1d",
     auto_adjust=True,
     progress=True,
-    threads=True
+    threads=True,
 )
 
 if isinstance(stock_data.columns, pd.MultiIndex):
@@ -68,17 +64,17 @@ prices = prices.dropna(axis=1, how="all")
 print(f"Downloaded {prices.shape[1]} stocks.")
 
 # ============================================================
-# Download S&P 500 index
+# Download KOSPI index
 # ============================================================
 
-print("Downloading S&P 500 index...")
+print("Downloading KOSPI index...")
 
 index_data = yf.download(
-    "^GSPC",
+    "^KS11",
     period=PERIOD,
     interval="1d",
     auto_adjust=True,
-    progress=False
+    progress=False,
 )
 
 if isinstance(index_data.columns, pd.MultiIndex):
@@ -98,7 +94,7 @@ print("Preparing price data...")
 stock_prices = prices.copy()
 
 index_prices = index_price.copy()
-index_prices.name = "SP500"
+index_prices.name = "KOSPI"
 
 # ============================================================
 # Align dates

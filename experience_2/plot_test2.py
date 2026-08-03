@@ -9,57 +9,57 @@ import matplotlib.pyplot as plt
 
 # CEIR
 ceir_case1_weight_history = pd.read_csv(
-    f"data/data_sp500_wass_ceir_alpha=0.95_delta=0.01_weights_case1.csv",
+    f"../data/data_sp500_wass_ceir_alpha=0.95_delta=0.01_weights_case1.csv",
     index_col=0,
     parse_dates=True
 )
 
 ceir_case1_optimization_history = pd.read_csv(
-    f"data/data_sp500_wass_ceir_alpha=0.95_delta=0.01_optimization_history_case1.csv",
+    f"../data/data_sp500_wass_ceir_alpha=0.95_delta=0.01_optimization_history_case1.csv",
     index_col=0,
     parse_dates=True
 )
 
 ceir_case1_backtest_returns = pd.read_csv(
-    f"data/data_sp500_wass_ceir_alpha=0.95_delta=0.01_returns_case1.csv",
+    f"../data/data_sp500_wass_ceir_alpha=0.95_delta=0.01_returns_case1.csv",
     index_col=0,
     parse_dates=True
 )
 
 # CLEIR
 cleir_case1_weight_history = pd.read_csv(
-    f"data/data_sp500_wass_cleir_alpha=0.95_delta=0.01_weights_case1.csv",
+    f"../data/data_sp500_wass_cleir_alpha=0.95_delta=0.01_weights_case1.csv",
     index_col=0,
     parse_dates=True
 )
 
 cleir_case1_optimization_history = pd.read_csv(
-    f"data/data_sp500_wass_cleir_alpha=0.95_delta=0.01_optimization_history_case1.csv",
+    f"../data/data_sp500_wass_cleir_alpha=0.95_delta=0.01_optimization_history_case1.csv",
     index_col=0,
     parse_dates=True
 )
 
 cleir_case1_backtest_returns = pd.read_csv(
-    f"data/data_sp500_wass_cleir_alpha=0.95_delta=0.01_returns_case1.csv",
+    f"../data/data_sp500_wass_cleir_alpha=0.95_delta=0.01_returns_case1.csv",
     index_col=0,
     parse_dates=True
 )
 
 # Robust Index Tracking
 rit_case1_weight_history = pd.read_csv(
-    f"data/data_sp500_wass_rit_delta=0.01_weights_case1.csv",
+    f"../data/data_sp500_wass_rit_delta=0.01_weights_case1.csv",
     index_col=0,
     parse_dates=True
 )
 
 rit_case1_optimization_history = pd.read_csv(
-    f"data/data_sp500_wass_rit_delta=0.01_optimization_history_case1.csv",
+    f"../data/data_sp500_wass_rit_delta=0.01_optimization_history_case1.csv",
     index_col=0,
     parse_dates=True
 )
 
 rit_case1_backtest_returns = pd.read_csv(
-    f"data/data_sp500_wass_rit_delta=0.01_returns_case1.csv",
+    f"../data/data_sp500_wass_rit_delta=0.01_returns_case1.csv",
     index_col=0,
     parse_dates=True
 )
@@ -68,57 +68,57 @@ rit_case1_backtest_returns = pd.read_csv(
 
 # CEIR
 ceir_case2_weight_history = pd.read_csv(
-    f"data/data_sp500_wass_ceir_alpha=0.95_delta=0.01_weights_case2.csv",
+    f"../data/data_sp500_wass_ceir_alpha=0.95_delta=0.01_weights_case2.csv",
     index_col=0,
     parse_dates=True
 )
 
 ceir_case2_optimization_history = pd.read_csv(
-    f"data/data_sp500_wass_ceir_alpha=0.95_delta=0.01_optimization_history_case2.csv",
+    f"../data/data_sp500_wass_ceir_alpha=0.95_delta=0.01_optimization_history_case2.csv",
     index_col=0,
     parse_dates=True
 )
 
 ceir_case2_backtest_returns = pd.read_csv(
-    f"data/data_sp500_wass_ceir_alpha=0.95_delta=0.01_returns_case2.csv",
+    f"../data/data_sp500_wass_ceir_alpha=0.95_delta=0.01_returns_case2.csv",
     index_col=0,
     parse_dates=True
 )
 
 # CLEIR
 cleir_case2_weight_history = pd.read_csv(
-    f"data/data_sp500_wass_cleir_alpha=0.95_delta=0.01_weights_case2.csv",
+    f"../data/data_sp500_wass_cleir_alpha=0.95_delta=0.01_weights_case2.csv",
     index_col=0,
     parse_dates=True
 )
 
 cleir_case2_optimization_history = pd.read_csv(
-    f"data/data_sp500_wass_cleir_alpha=0.95_delta=0.01_optimization_history_case2.csv",
+    f"../data/data_sp500_wass_cleir_alpha=0.95_delta=0.01_optimization_history_case2.csv",
     index_col=0,
     parse_dates=True
 )
 
 cleir_case2_backtest_returns = pd.read_csv(
-    f"data/data_sp500_wass_cleir_alpha=0.95_delta=0.01_returns_case2.csv",
+    f"../data/data_sp500_wass_cleir_alpha=0.95_delta=0.01_returns_case2.csv",
     index_col=0,
     parse_dates=True
 )
 
 # Robust Index Tracking
 rit_case2_weight_history = pd.read_csv(
-    f"data/data_sp500_wass_rit_delta=0.01_weights_case2.csv",
+    f"../data/data_sp500_wass_rit_delta=0.01_weights_case2.csv",
     index_col=0,
     parse_dates=True
 )
 
 rit_case2_optimization_history = pd.read_csv(
-    f"data/data_sp500_wass_rit_delta=0.01_optimization_history_case2.csv",
+    f"../data/data_sp500_wass_rit_delta=0.01_optimization_history_case2.csv",
     index_col=0,
     parse_dates=True
 )
 
 rit_case2_backtest_returns = pd.read_csv(
-    f"data/data_sp500_wass_rit_delta=0.01_returns_case2.csv",
+    f"../data/data_sp500_wass_rit_delta=0.01_returns_case2.csv",
     index_col=0,
     parse_dates=True
 )
@@ -127,57 +127,57 @@ rit_case2_backtest_returns = pd.read_csv(
 
 # CEIR
 ceir_case3_weight_history = pd.read_csv(
-    f"data/data_sp500_wass_ceir_alpha=0.95_delta=0.01_weights_case3.csv",
+    f"../data/data_sp500_wass_ceir_alpha=0.95_delta=0.01_weights_case3.csv",
     index_col=0,
     parse_dates=True
 )
 
 ceir_case3_optimization_history = pd.read_csv(
-    f"data/data_sp500_wass_ceir_alpha=0.95_delta=0.01_optimization_history_case3.csv",
+    f"../data/data_sp500_wass_ceir_alpha=0.95_delta=0.01_optimization_history_case3.csv",
     index_col=0,
     parse_dates=True
 )
 
 ceir_case3_backtest_returns = pd.read_csv(
-    f"data/data_sp500_wass_ceir_alpha=0.95_delta=0.01_returns_case3.csv",
+    f"../data/data_sp500_wass_ceir_alpha=0.95_delta=0.01_returns_case3.csv",
     index_col=0,
     parse_dates=True
 )
 
 # CLEIR
 cleir_case3_weight_history = pd.read_csv(
-    f"data/data_sp500_wass_cleir_alpha=0.95_delta=0.01_weights_case3.csv",
+    f"../data/data_sp500_wass_cleir_alpha=0.95_delta=0.01_weights_case3.csv",
     index_col=0,
     parse_dates=True
 )
 
 cleir_case3_optimization_history = pd.read_csv(
-    f"data/data_sp500_wass_cleir_alpha=0.95_delta=0.01_optimization_history_case3.csv",
+    f"../data/data_sp500_wass_cleir_alpha=0.95_delta=0.01_optimization_history_case3.csv",
     index_col=0,
     parse_dates=True
 )
 
 cleir_case3_backtest_returns = pd.read_csv(
-    f"data/data_sp500_wass_cleir_alpha=0.95_delta=0.01_returns_case3.csv",
+    f"../data/data_sp500_wass_cleir_alpha=0.95_delta=0.01_returns_case3.csv",
     index_col=0,
     parse_dates=True
 )
 
 # Robust Index Tracking
 rit_case3_weight_history = pd.read_csv(
-    f"data/data_sp500_wass_rit_delta=0.01_weights_case3.csv",
+    f"../data/data_sp500_wass_rit_delta=0.01_weights_case3.csv",
     index_col=0,
     parse_dates=True
 )
 
 rit_case3_optimization_history = pd.read_csv(
-    f"data/data_sp500_wass_rit_delta=0.01_optimization_history_case3.csv",
+    f"../data/data_sp500_wass_rit_delta=0.01_optimization_history_case3.csv",
     index_col=0,
     parse_dates=True
 )
 
 rit_case3_backtest_returns = pd.read_csv(
-    f"data/data_sp500_wass_rit_delta=0.01_returns_case3.csv",
+    f"../data/data_sp500_wass_rit_delta=0.01_returns_case3.csv",
     index_col=0,
     parse_dates=True
 )

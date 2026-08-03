@@ -8,19 +8,19 @@ import matplotlib.pyplot as plt
 
 # CEIR V1
 wass_ceir_v1_weight_history = pd.read_csv(
-    f"data/exp3_data_sp500_wass_ceir_alpha=0.95_delta=0.01_weights_v1.csv",
+    f"../data/exp3_data_sp500_wass_ceir_alpha=0.95_delta=0.01_weights_v1.csv",
     index_col=0,
     parse_dates=True,
 )
 
 wass_ceir_v1_optimization_history = pd.read_csv(
-    f"data/exp3_data_sp500_wass_ceir_alpha=0.95_delta=0.01_optimization_history_v1.csv",
+    f"../data/exp3_data_sp500_wass_ceir_alpha=0.95_delta=0.01_optimization_history_v1.csv",
     index_col=0,
     parse_dates=True,
 )
 
 wass_ceir_v1_backtest_returns = pd.read_csv(
-    f"data/exp3_data_sp500_wass_ceir_alpha=0.95_delta=0.01_returns_v1.csv",
+    f"../data/exp3_data_sp500_wass_ceir_alpha=0.95_delta=0.01_returns_v1.csv",
     index_col=0,
     parse_dates=True,
 )
@@ -28,19 +28,19 @@ wass_ceir_v1_backtest_returns = pd.read_csv(
 
 # CEIR V2
 wass_ceir_v2_weight_history = pd.read_csv(
-    f"data/exp3_data_sp500_wass_ceir_alpha=0.95_delta=0.01_weights_v2.csv",
+    f"../data/exp3_data_sp500_wass_ceir_alpha=0.95_delta=0.01_weights_v2.csv",
     index_col=0,
     parse_dates=True,
 )
 
 wass_ceir_v2_optimization_history = pd.read_csv(
-    f"data/exp3_data_sp500_wass_ceir_alpha=0.95_delta=0.01_optimization_history_v2.csv",
+    f"../data/exp3_data_sp500_wass_ceir_alpha=0.95_delta=0.01_optimization_history_v2.csv",
     index_col=0,
     parse_dates=True,
 )
 
 wass_ceir_v2_backtest_returns = pd.read_csv(
-    f"data/exp3_data_sp500_wass_ceir_alpha=0.95_delta=0.01_returns_v2.csv",
+    f"../data/exp3_data_sp500_wass_ceir_alpha=0.95_delta=0.01_returns_v2.csv",
     index_col=0,
     parse_dates=True,
 )
@@ -48,19 +48,19 @@ wass_ceir_v2_backtest_returns = pd.read_csv(
 
 # CLEIR V1
 wass_cleir_v1_weight_history = pd.read_csv(
-    f"data/exp3_data_sp500_wass_cleir_alpha=0.95_delta=0.01_weights_v1.csv",
+    f"../data/exp3_data_sp500_wass_cleir_alpha=0.95_delta=0.01_weights_v1.csv",
     index_col=0,
     parse_dates=True,
 )
 
 wass_cleir_v1_optimization_history = pd.read_csv(
-    f"data/exp3_data_sp500_wass_cleir_alpha=0.95_delta=0.01_optimization_history_v1.csv",
+    f"../data/exp3_data_sp500_wass_cleir_alpha=0.95_delta=0.01_optimization_history_v1.csv",
     index_col=0,
     parse_dates=True,
 )
 
 wass_cleir_v1_backtest_returns = pd.read_csv(
-    f"data/exp3_data_sp500_wass_cleir_alpha=0.95_delta=0.01_returns_v1.csv",
+    f"../data/exp3_data_sp500_wass_cleir_alpha=0.95_delta=0.01_returns_v1.csv",
     index_col=0,
     parse_dates=True,
 )
@@ -68,19 +68,19 @@ wass_cleir_v1_backtest_returns = pd.read_csv(
 
 # CLEIR V2
 wass_cleir_v2_weight_history = pd.read_csv(
-    f"data/exp3_data_sp500_wass_cleir_alpha=0.95_delta=0.01_weights_v2.csv",
+    f"../data/exp3_data_sp500_wass_cleir_alpha=0.95_delta=0.01_weights_v2.csv",
     index_col=0,
     parse_dates=True,
 )
 
 wass_cleir_v2_optimization_history = pd.read_csv(
-    f"data/exp3_data_sp500_wass_cleir_alpha=0.95_delta=0.01_optimization_history_v2.csv",
+    f"../data/exp3_data_sp500_wass_cleir_alpha=0.95_delta=0.01_optimization_history_v2.csv",
     index_col=0,
     parse_dates=True,
 )
 
 wass_cleir_v2_backtest_returns = pd.read_csv(
-    f"data/exp3_data_sp500_wass_cleir_alpha=0.95_delta=0.01_returns_v2.csv",
+    f"../data/exp3_data_sp500_wass_cleir_alpha=0.95_delta=0.01_returns_v2.csv",
     index_col=0,
     parse_dates=True,
 )
@@ -125,17 +125,19 @@ plt.plot(
 plt.plot(
     wass_ceir_v1_backtest_returns.index,
     wass_ceir_v1_backtest_returns["portfolio"],
-    label="CEIR + Wasserstein (alpha=0.95, delta=0.01)",
+    label="version 1",
     linewidth=0.5,
     alpha=0.5,
+    linestyle="--"
 )
 
 plt.plot(
     wass_ceir_v2_backtest_returns.index,
     wass_ceir_v2_backtest_returns["portfolio"],
-    label="CEIR + Wasserstein (alpha=0.5, delta=0.01)",
+    label="version 2",
     linewidth=0.5,
     alpha=0.5,
+    linestyle=":"
 )
 
 plt.xlabel("Date")
@@ -160,17 +162,19 @@ plt.plot(
 plt.plot(
     wass_cleir_v1_backtest_returns.index,
     wass_cleir_v1_backtest_returns["portfolio"],
-    label="CLEIR + Wasserstein (alpha=0.95, delta=0.01)",
+    label="version 1",
     linewidth=0.5,
     alpha=0.5,
+    linestyle="--"
 )
 
 plt.plot(
     wass_cleir_v2_backtest_returns.index,
     wass_cleir_v2_backtest_returns["portfolio"],
-    label="CLEIR + Wasserstein (alpha=0.5, delta=0.01)",
+    label="version 2",
     linewidth=0.5,
     alpha=0.5,
+    linestyle=":"
 )
 
 plt.xlabel("Date")
@@ -199,17 +203,19 @@ plt.plot(
 plt.plot(
     wass_ceir_v1_cumulative.index,
     wass_ceir_v1_cumulative["portfolio"],
-    label="CEIR + Wasserstein (alpha=0.95, delta=0.01)",
+    label="version 1",
     linewidth=0.5,
     alpha=0.5,
+    linestyle="--"
 )
 
 plt.plot(
     wass_ceir_v2_cumulative.index,
     wass_ceir_v2_cumulative["portfolio"],
-    label="CEIR + Wasserstein (alpha=0.5, delta=0.01)",
+    label="version 2",
     linewidth=0.5,
     alpha=0.5,
+    linestyle=":"
 )
 
 plt.xlabel("Date")
@@ -234,17 +240,19 @@ plt.plot(
 plt.plot(
     wass_cleir_v1_cumulative.index,
     wass_cleir_v1_cumulative["portfolio"],
-    label="CLEIR + Wasserstein (alpha=0.95, delta=0.01)",
+    label="version 1",
     linewidth=0.5,
     alpha=0.5,
+    linestyle="--"
 )
 
 plt.plot(
     wass_cleir_v2_cumulative.index,
     wass_cleir_v2_cumulative["portfolio"],
-    label="CLEIR + Wasserstein (alpha=0.5, delta=0.01)",
+    label="version 2",
     linewidth=0.5,
     alpha=0.5,
+    linestyle=":"
 )
 
 plt.xlabel("Date")
@@ -347,40 +355,28 @@ def plot_weight_history(
 # CEIR V1
 plot_weight_history(
     weight_history=wass_ceir_v1_weight_history,
-    title=(
-        "Portfolio Composition "
-        "(CEIR + Wasserstein, alpha=0.95, delta=0.01)"
-    ),
+    title=("Portfolio Composition : CEIR : version 1"),
 )
 
 
 # CEIR V2
 plot_weight_history(
     weight_history=wass_ceir_v2_weight_history,
-    title=(
-        "Portfolio Composition "
-        "(CEIR + Wasserstein, alpha=0.5, delta=0.01)"
-    ),
+    title=("Portfolio Composition : CEIR : version 2"),
 )
 
 
 # CLEIR V1
 plot_weight_history(
     weight_history=wass_cleir_v1_weight_history,
-    title=(
-        "Portfolio Composition "
-        "(CLEIR + Wasserstein, alpha=0.95, delta=0.01)"
-    ),
+    title=("Portfolio Composition : CLEIR : version 1"),
 )
 
 
 # CLEIR V2
 plot_weight_history(
     weight_history=wass_cleir_v2_weight_history,
-    title=(
-        "Portfolio Composition "
-        "(CLEIR + Wasserstein, alpha=0.5, delta=0.01)"
-    ),
+    title=("Portfolio Composition : CLEIR : version 2"),
 )
 
 

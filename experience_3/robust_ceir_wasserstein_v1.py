@@ -21,13 +21,13 @@ index = ["sp500", "russell2000", "kospi"][0]
 INDEX = ["SP500", "Russell2000", "KOSPI"][0]
 
 stock_prices = pd.read_csv(
-    f"data/data_{index}_stocks.csv",
+    f"../data/data_{index}_stocks.csv",
     index_col=0,
     parse_dates=True,
 )
 
 index_prices = pd.read_csv(
-    f"data/data_{index}_index.csv",
+    f"../data/data_{index}_index.csv",
     index_col=0,
     parse_dates=True,
 )[INDEX]
@@ -94,12 +94,6 @@ def solve_robust_ceir_wasserstein(
     R = stock_returns.to_numpy(dtype=float)
     Y = index_returns.to_numpy(dtype=float).reshape(-1, 1)
     xi = np.hstack((Y, R))
-
-    xi_max = np.nanmax(xi, axis=0)
-    xi_min = np.nanmin(xi, axis=0)
-    margin = 0.05 * (xi_max - xi_min)
-    L = xi_min - margin
-    U = xi_max + margin
 
     n, m = R.shape
 
@@ -343,12 +337,12 @@ print(f"Maximum stocks   : {optimization_history['number_of_stocks'].max()}")
 # 저장
 # ============================================================
 
-weight_history.to_csv(f"data/exp3_data_{index}_wass_ceir_alpha={alpha}_delta={delta}_weights_v1.csv")
-optimization_history.to_csv(f"data/exp3_data_{index}_wass_ceir_alpha={alpha}_delta={delta}_optimization_history_v1.csv")
-backtest_returns.to_csv(f"data/exp3_data_{index}_wass_ceir_alpha={alpha}_delta={delta}_returns_v1.csv")
+weight_history.to_csv(f"../data/exp3_data_{index}_wass_ceir_alpha={alpha}_delta={delta}_weights_v1.csv")
+optimization_history.to_csv(f"../data/exp3_data_{index}_wass_ceir_alpha={alpha}_delta={delta}_optimization_history_v1.csv")
+backtest_returns.to_csv(f"../data/exp3_data_{index}_wass_ceir_alpha={alpha}_delta={delta}_returns_v1.csv")
 
 print("\nFiles saved")
 
-print(f"data/exp3_data_{index}_wass_ceir_alpha={alpha}_delta={delta}_weights_v1.csv")
-print(f"data/exp3_data_{index}_wass_ceir_alpha={alpha}_delta={delta}_optimization_history_v1.csv")
-print(f"data/exp3_data_{index}_wass_ceir_alpha={alpha}_delta={delta}_returns_v1.csv")
+print(f"../data/exp3_data_{index}_wass_ceir_alpha={alpha}_delta={delta}_weights_v1.csv")
+print(f"../data/exp3_data_{index}_wass_ceir_alpha={alpha}_delta={delta}_optimization_history_v1.csv")
+print(f"../data/exp3_data_{index}_wass_ceir_alpha={alpha}_delta={delta}_returns_v1.csv")

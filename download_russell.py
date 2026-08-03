@@ -2,6 +2,7 @@ import csv
 import os
 import time
 from io import StringIO
+from pathlib import Path
 
 import numpy as np
 import pandas as pd
@@ -16,8 +17,12 @@ import yfinance as yf
 PERIOD = "20y"
 BATCH_SIZE = 100
 
-STOCK_PRICE_FILE = "data/data_russell2000_stocks.csv"
-INDEX_PRICE_FILE = "data/data_russell2000_index.csv"
+BASE_DIR = Path(__file__).resolve().parent
+DATA_DIR = BASE_DIR / "data"
+DATA_DIR.mkdir(exist_ok=True)
+
+STOCK_PRICE_FILE = DATA_DIR / "data_russell2000_stocks.csv"
+INDEX_PRICE_FILE = DATA_DIR / "data_russell2000_index.csv"
 
 IWM_HOLDINGS_URLS = [
     (

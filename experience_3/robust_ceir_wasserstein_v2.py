@@ -21,13 +21,13 @@ index = ["sp500", "russell2000", "kospi"][0]
 INDEX = ["SP500", "Russell2000", "KOSPI"][0]
 
 stock_prices = pd.read_csv(
-    f"data/data_{index}_stocks.csv",
+    f"../data/data_{index}_stocks.csv",
     index_col=0,
     parse_dates=True,
 )
 
 index_prices = pd.read_csv(
-    f"data/data_{index}_index.csv",
+    f"../data/data_{index}_index.csv",
     index_col=0,
     parse_dates=True,
 )[INDEX]
@@ -104,9 +104,6 @@ def solve_robust_ceir_wasserstein(
     gamma = cp.Variable()
     s = cp.Variable(n)
 
-    z1 = np.zeros((n, m+1))
-    z2 = cp.vstack([w_tilde / (1 - alpha)] * n)
-
     lamb = cp.norm(w_tilde, 2) / (1 - alpha)
 
     # 목적함수
@@ -116,19 +113,13 @@ def solve_robust_ceir_wasserstein(
     constraints = [
         cp.sum(w) == 1,
         w >= 0,
-    ]
-    for i in range(n):
+
         # k = 1
-        z_i1 = z1[i, :]
-        constraints += [
-            gamma - z_i1 @ xi[i, :] <= s[i],
-        ]
+        gamma <= s,
 
         # k = 2
-        z_i2 = z2[i, :]
-        constraints += [
-            gamma - gamma / (1 - alpha) - z_i2 @ xi[i, :] <= s[i],
-        ]
+        gamma - gamma / (1 - alpha) - xi @ w_tilde / (1 - alpha) <= s,
+    ]
 
     problem = cp.Problem(objective, constraints)
     problem.solve(solver=cp.MOSEK)
@@ -322,12 +313,12 @@ print(f"Maximum stocks   : {optimization_history['number_of_stocks'].max()}")
 # 저장
 # ============================================================
 
-weight_history.to_csv(f"data/exp3_data_{index}_wass_ceir_alpha={alpha}_delta={delta}_weights_v2.csv")
-optimization_history.to_csv(f"data/exp3_data_{index}_wass_ceir_alpha={alpha}_delta={delta}_optimization_history_v2.csv")
-backtest_returns.to_csv(f"data/exp3_data_{index}_wass_ceir_alpha={alpha}_delta={delta}_returns_v2.csv")
+weight_history.to_csv(f"../data/exp3_data_{index}_wass_ceir_alpha={alpha}_delta={delta}_weights_v2.csv")
+optimization_history.to_csv(f"../data/exp3_data_{index}_wass_ceir_alpha={alpha}_delta={delta}_optimization_history_v2.csv")
+backtest_returns.to_csv(f"../data/exp3_data_{index}_wass_ceir_alpha={alpha}_delta={delta}_returns_v2.csv")
 
 print("\nFiles saved")
 
-print(f"data/exp3_data_{index}_wass_ceir_alpha={alpha}_delta={delta}_weights_v2.csv")
-print(f"data/exp3_data_{index}_wass_ceir_alpha={alpha}_delta={delta}_optimization_history_v2.csv")
-print(f"data/exp3_data_{index}_wass_ceir_alpha={alpha}_delta={delta}_returns_v2.csv")
+print(f"../data/exp3_data_{index}_wass_ceir_alpha={alpha}_delta={delta}_weights_v2.csv")
+print(f"../data/exp3_data_{index}_wass_ceir_alpha={alpha}_delta={delta}_optimization_history_v2.csv")
+print(f"../data/exp3_data_{index}_wass_ceir_alpha={alpha}_delta={delta}_returns_v2.csv")

@@ -21,13 +21,13 @@ index = ["sp500", "russell2000", "kospi"][0]
 INDEX = ["SP500", "Russell2000", "KOSPI"][0]
 
 stock_prices = pd.read_csv(
-    f"data/data_{index}_stocks.csv",
+    f"../data/data_{index}_stocks.csv",
     index_col=0,
     parse_dates=True,
 )
 
 index_prices = pd.read_csv(
-    f"data/data_{index}_index.csv",
+    f"../data/data_{index}_index.csv",
     index_col=0,
     parse_dates=True,
 )[INDEX]
@@ -355,12 +355,12 @@ print(f"Maximum stocks   : {optimization_history['number_of_stocks'].max()}")
 # 저장
 # ============================================================
 
-weight_history.to_csv(f"data/data_{index}_wass_cleir_alpha={alpha}_delta={delta}_weights_case3.csv")
-optimization_history.to_csv(f"data/data_{index}_wass_cleir_alpha={alpha}_delta={delta}_optimization_history_case3.csv")
-backtest_returns.to_csv(f"data/data_{index}_wass_cleir_alpha={alpha}_delta={delta}_returns_case3.csv")
+weight_history.to_csv(f"../data/data_{index}_wass_cleir_alpha={alpha}_delta={delta}_weights_case3.csv")
+optimization_history.to_csv(f"../data/data_{index}_wass_cleir_alpha={alpha}_delta={delta}_optimization_history_case3.csv")
+backtest_returns.to_csv(f"../data/data_{index}_wass_cleir_alpha={alpha}_delta={delta}_returns_case3.csv")
 
 print("\nFiles saved")
 
-print(f"data/data_{index}_wass_cleir_alpha={alpha}_delta={delta}_weights_case3.csv")
-print(f"data/data_{index}_wass_cleir_alpha={alpha}_delta={delta}_optimization_history_case3.csv")
-print(f"data/data_{index}_wass_cleir_alpha={alpha}_delta={delta}_returns_case3.csv")
+print(f"../data/data_{index}_wass_cleir_alpha={alpha}_delta={delta}_weights_case3.csv")
+print(f"../data/data_{index}_wass_cleir_alpha={alpha}_delta={delta}_optimization_history_case3.csv")
+print(f"../data/data_{index}_wass_cleir_alpha={alpha}_delta={delta}_returns_case3.csv")

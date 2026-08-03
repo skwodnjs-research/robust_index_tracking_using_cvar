@@ -13,19 +13,19 @@ import matplotlib.pyplot as plt
 
 # Case 1 : alpha = 0.95, delta = 0.01
 wass_ceir_case1_weight_history = pd.read_csv(
-    f"data/data_sp500_wass_ceir_alpha=0.95_delta=0.01_weights.csv",
+    f"../data/data_sp500_wass_ceir_alpha=0.95_delta=0.01_weights.csv",
     index_col=0,
     parse_dates=True,
 )
 
 wass_ceir_case1_optimization_history = pd.read_csv(
-    f"data/data_sp500_wass_ceir_alpha=0.95_delta=0.01_optimization_history.csv",
+    f"../data/data_sp500_wass_ceir_alpha=0.95_delta=0.01_optimization_history.csv",
     index_col=0,
     parse_dates=True,
 )
 
 wass_ceir_case1_backtest_returns = pd.read_csv(
-    f"data/data_sp500_wass_ceir_alpha=0.95_delta=0.01_returns.csv",
+    f"../data/data_sp500_wass_ceir_alpha=0.95_delta=0.01_returns.csv",
     index_col=0,
     parse_dates=True,
 )
@@ -33,19 +33,19 @@ wass_ceir_case1_backtest_returns = pd.read_csv(
 
 # Case 2 : alpha = 0.5, delta = 0.01
 wass_ceir_case2_weight_history = pd.read_csv(
-    f"data/data_sp500_wass_ceir_alpha=0.5_delta=0.01_weights.csv",
+    f"../data/data_sp500_wass_ceir_alpha=0.5_delta=0.01_weights.csv",
     index_col=0,
     parse_dates=True,
 )
 
 wass_ceir_case2_optimization_history = pd.read_csv(
-    f"data/data_sp500_wass_ceir_alpha=0.5_delta=0.01_optimization_history.csv",
+    f"../data/data_sp500_wass_ceir_alpha=0.5_delta=0.01_optimization_history.csv",
     index_col=0,
     parse_dates=True,
 )
 
 wass_ceir_case2_backtest_returns = pd.read_csv(
-    f"data/data_sp500_wass_ceir_alpha=0.5_delta=0.01_returns.csv",
+    f"../data/data_sp500_wass_ceir_alpha=0.5_delta=0.01_returns.csv",
     index_col=0,
     parse_dates=True,
 )
@@ -57,19 +57,19 @@ wass_ceir_case2_backtest_returns = pd.read_csv(
 
 # Case 1 : alpha = 0.95, delta = 0.01
 wass_cleir_case1_weight_history = pd.read_csv(
-    f"data/data_sp500_wass_cleir_alpha=0.95_delta=0.01_weights.csv",
+    f"../data/data_sp500_wass_cleir_alpha=0.95_delta=0.01_weights.csv",
     index_col=0,
     parse_dates=True,
 )
 
 wass_cleir_case1_optimization_history = pd.read_csv(
-    f"data/data_sp500_wass_cleir_alpha=0.95_delta=0.01_optimization_history.csv",
+    f"../data/data_sp500_wass_cleir_alpha=0.95_delta=0.01_optimization_history.csv",
     index_col=0,
     parse_dates=True,
 )
 
 wass_cleir_case1_backtest_returns = pd.read_csv(
-    f"data/data_sp500_wass_cleir_alpha=0.95_delta=0.01_returns.csv",
+    f"../data/data_sp500_wass_cleir_alpha=0.95_delta=0.01_returns.csv",
     index_col=0,
     parse_dates=True,
 )
@@ -77,19 +77,19 @@ wass_cleir_case1_backtest_returns = pd.read_csv(
 
 # Case 2 : alpha = 0.5, delta = 0.01
 wass_cleir_case2_weight_history = pd.read_csv(
-    f"data/data_sp500_wass_cleir_alpha=0.5_delta=0.01_weights.csv",
+    f"../data/data_sp500_wass_cleir_alpha=0.5_delta=0.01_weights.csv",
     index_col=0,
     parse_dates=True,
 )
 
 wass_cleir_case2_optimization_history = pd.read_csv(
-    f"data/data_sp500_wass_cleir_alpha=0.5_delta=0.01_optimization_history.csv",
+    f"../data/data_sp500_wass_cleir_alpha=0.5_delta=0.01_optimization_history.csv",
     index_col=0,
     parse_dates=True,
 )
 
 wass_cleir_case2_backtest_returns = pd.read_csv(
-    f"data/data_sp500_wass_cleir_alpha=0.5_delta=0.01_returns.csv",
+    f"../data/data_sp500_wass_cleir_alpha=0.5_delta=0.01_returns.csv",
     index_col=0,
     parse_dates=True,
 )
@@ -100,19 +100,19 @@ wass_cleir_case2_backtest_returns = pd.read_csv(
 # ------------------------------------------------------------
 
 wass_it_weight_history = pd.read_csv(
-    f"data/data_sp500_wass_rit_delta=0.01_weights.csv",
+    f"../data/data_sp500_wass_rit_delta=0.01_weights.csv",
     index_col=0,
     parse_dates=True,
 )
 
 wass_it_optimization_history = pd.read_csv(
-    f"data/data_sp500_wass_rit_delta=0.01_optimization_history.csv",
+    f"../data/data_sp500_wass_rit_delta=0.01_optimization_history.csv",
     index_col=0,
     parse_dates=True,
 )
 
 wass_it_backtest_returns = pd.read_csv(
-    f"data/data_sp500_wass_rit_delta=0.01_returns.csv",
+    f"../data/data_sp500_wass_rit_delta=0.01_returns.csv",
     index_col=0,
     parse_dates=True,
 )
